@@ -5,6 +5,7 @@ import { HomeRoutingModule } from './home-routing.module';
 import { BodyComponent } from './body/body.component';
 import { LoginComponent } from './body/login/login.component';
 import { FormsModule } from '@angular/forms';
+import { MensagemModule } from '../componentes/mensagem/mensagem.module';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { FormsModule } from '@angular/forms';
   imports: [
     CommonModule,
     HomeRoutingModule,
-    FormsModule
+    FormsModule,
+    MensagemModule
   ]
 })
 export class HomeModule { }
