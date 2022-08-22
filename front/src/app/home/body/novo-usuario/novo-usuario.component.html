@@ -1,18 +1,24 @@
 <h4 class="text-center">Registre-se e mostre seu pet ao mundo!</h4>
 
-<form class="row g-3" [formGroup]="novoUsuarioForm" (submit)="cadastrar()">
+<form class="row g-3" [formGroup]="novoUsuarioForm" (ngSubmit)="cadastrar()">
     <div class="col-12">
         <input type="email" class="form-control" placeholder="E-mail" formControlName="email">
-        <app-mensagem *ngIf="novoUsuarioForm.get('email')?.errors && novoUsuarioForm.get('email')?.touched" mensagem="Email Obrigatório"></app-mensagem>
+        <app-mensagem *ngIf="novoUsuarioForm.get('email')?.errors?.['required'] && novoUsuarioForm.get('email')?.touched" mensagem="Email Obrigatório"></app-mensagem>
+        <app-mensagem *ngIf="novoUsuarioForm.get('email')?.errors?.['email'] && novoUsuarioForm.get('email')?.touched" mensagem="Email Inorreto"></app-mensagem>
     </div>
 
     <div class="col-12">
         <input type="text" class="form-control" placeholder="Nome Completo" formControlName="fullName">
         <app-mensagem *ngIf="novoUsuarioForm.get('fullName')?.errors && novoUsuarioForm.get('fullName')?.touched" mensagem="Nome incorreto"></app-mensagem>
     </div>
-
+    <div class="col-12">
+        <input type="text" class="form-control" placeholder="Usuário" formControlName="userName">
+        <app-mensagem *ngIf="novoUsuarioForm.get('userName')?.errors?.['minusculo'] && novoUsuarioForm.get('userName')?.touched" mensagem="Usuário deve ser em letra minúscula"></app-mensagem>
+        <app-mensagem *ngIf="novoUsuarioForm.get('userName')?.errors?.['usuarioExistente']" mensagem="Usuário já Existe"></app-mensagem>
+    </div>
     <div class="col-12">
         <input type="password" class="form-control" placeholder="Senha" formControlName="password">
+        <app-mensagem *ngIf="novoUsuarioForm.errors?.['senhaIgualUsuario']" mensagem="Senha deve ser diferente do usuário"></app-mensagem>
     </div>
     <div class="d-grid gap-2">
         <button class="btn btn-primary btn-block">Cadastro</button>
