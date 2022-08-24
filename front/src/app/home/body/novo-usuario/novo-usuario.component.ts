@@ -22,28 +22,6 @@ export class NovoUsuarioComponent implements OnInit {
     }
 
     ngOnInit(): void {
-        // this.novoUsuarioForm = new FormGroup(
-        //     {
-        //         email: new FormControl<string | null>(null),
-        //         fullName: new FormControl<string | null>(null),
-        //         password: new FormControl<string | null>(null),
-        //         userName: new FormControl<string | null>(null)
-        //     }
-        // );
-
-
-        // this.novoUsuarioForm = this._formBuilder.group({
-        //     email: ['', [Validators.required, Validators.email]],
-        //     fullName: ['', [Validators.required, Validators.minLength(
-                
-        //         4)]],
-        //     userName: ['', [minusculoValidator]],
-        //     password: ['']
-        // },
-        // {
-        //     validators: [usuarioSenhaIguaisValidator]
-        // });
-
         this.novoUsuarioForm = this._formBuilder.group({
             email: new FormControl<string | null>('', [Validators.required, Validators.email]),
             fullName: new FormControl<string | null>('', [Validators.required, Validators.minLength(4)]),
