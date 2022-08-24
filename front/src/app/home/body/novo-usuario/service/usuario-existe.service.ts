@@ -22,7 +22,7 @@ export class UsuarioExiste {
                     this._novoUsuarioService.verificaSeUsuarioExiste(nomeUsuario)
                 ),
                 map((usuarioExiste: boolean) => (
-                    usuarioExiste ? { usuarioExistente: true } as UsuarioExistente : { usuarioExistente: false } as UsuarioExistente
+                    usuarioExiste ? { usuarioExistente: true } : null
                 )),
                 first()
             );

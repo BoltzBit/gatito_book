@@ -15,7 +15,6 @@ export class NovoUsuarioService {
     }
 
     public verificaSeUsuarioExiste(nomeUsuario: string): Observable<boolean>{
-        console.log(nomeUsuario);
         return this._http.get<boolean>(`http://localhost:3000/user/exists/${nomeUsuario}`);
     }
 }

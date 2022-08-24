@@ -1,15 +1,11 @@
 import { AbstractControl } from "@angular/forms";
 
-type Minusculo = {
-    minusculo: boolean
-}
-
-export function minusculoValidator(control: AbstractControl): Minusculo {
+export function minusculoValidator(control: AbstractControl) {
     const valor = control.value as string;
 
     if (valor !== valor.toLowerCase()) {
         return { minusculo: true };
     } else {
-        return { minusculo: false };
+        return null;
     }
 }
