@@ -1,1 +1,1 @@
-export * from './usuario.model';
+export * from './form-usuario.model';
