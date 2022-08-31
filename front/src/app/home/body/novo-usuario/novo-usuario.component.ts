@@ -7,7 +7,7 @@ import { minusculoValidator } from './utils/minusculo.validator';
 import { usuarioSenhaIguaisValidator } from './utils/usuario-senha-iguais.validator';
 
 @Component({
-    selector: 'app-novo-usuario',
+    selector: 'app-body-novo-usuario',
     templateUrl: './novo-usuario.component.html',
     styleUrls: ['./novo-usuario.component.scss']
 })
