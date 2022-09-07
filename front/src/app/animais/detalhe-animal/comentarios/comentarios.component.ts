@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Observable, switchMap, tap } from 'rxjs';
 import { Comentarios } from './models/comentario.model';
 import { ComentarioService } from './services/comentario.service';
@@ -23,7 +23,7 @@ export class ComentariosComponent implements OnInit {
         this.comentarios$ = this._comentarioService.buscaComentario(this.animalId);
 
         this.comentarioForm = this._formBuilder.group({
-            comentario: new FormGroup<string | null>('', [Validators.maxLength(300)])
+            comentario: new FormControl<string | null>('', [Validators.maxLength(300)])
         });
     }
 
