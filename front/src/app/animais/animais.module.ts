@@ -10,6 +10,7 @@ import { DetalheAnimalComponent } from './detalhe-animal/detalhe-animal.componen
 import { ComentariosComponent } from './detalhe-animal/comentarios/comentarios.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MensagemModule } from '../componentes/mensagem/mensagem.module';
+import { SharedModule } from '../shared/shared/shared.module';
 
 
 @NgModule({
@@ -24,8 +25,7 @@ import { MensagemModule } from '../componentes/mensagem/mensagem.module';
         CommonModule,
         AnimaisRoutingModule,
         CartaoModule,
-        ReactiveFormsModule,
-        MensagemModule
+        SharedModule
     ]
 })
 export class AnimaisModule { }
